@@ -5,4 +5,5 @@ coverage
 .DS_STORE
 .DS_Store
 tmp
+.history
 /frontend/public/assets

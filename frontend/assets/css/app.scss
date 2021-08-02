@@ -1,9 +1,10 @@
 @import "./bacon.scss";
+@import "./checkout.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 html,
 body {
-  background-color: #f7f8fa;
+  background-color: #f1f1f1;
   font-family: "Poppins", sans-serif;
   height: 100%;
   color: #46444c;
@@ -53,10 +54,6 @@ main main {
 .subtitle {
   font-size: 26px;
   margin-bottom: 40px;
-}
-
-p {
-  margin-bottom: 20px;
 }
 
 main ul {

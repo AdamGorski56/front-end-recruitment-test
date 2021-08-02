@@ -2,26 +2,90 @@
 @set('title', 'Checkout')
 
 @section('body')
-<div class="cart">
-    <div class="cart__container">
-        <h3 class="cart__title">Your order</h3>
-        @each(item in state.cart.items)
-        <div class="cart__item_container">
-            <p class="cart__item_name">{{item.name}}</p>
-            <p class="cart__item_price">{{item.price}}</p>
+<div class="checkout_container">
+    <form class="checkout_form" action="/order" method="POST" id="checkoutForm">
+        <div class="checkout_form__title">
+
+            <div class="checkout_form__title_number"><span>1</span></div>
+
+            <span class="checkout_form__title_text">Personal information</span>
         </div>
-        @end
-        <p class="cart__product_summary">
-            <p>Total purchases</p>
-            <p>{{state.cart.totals.subTotal}}</p>
-        </p>
-        <div class="cart__product_tax">
-            <p>Estimated tax</p>
-            <p>{{state.cart.totals.tax}}</p>
+        <div class="checkout_form__inline_inputs_wrappper">
+            <div class="checkout_form__input_wrappper">
+                <label for="firstName">First name</label>
+                <input type="text" placeholder="Elon" name="firstName" id="firstName">
+            </div>
+            <div class="checkout_form__input_wrapper">
+                <label for="lastName">Last name</label>
+                <input type="text" placeholder="Musk" name="lastName" id="lastName">
+            </div>
         </div>
-        <div class="cart__total">
-            <p>Total</p>
-            <p>{{state.cart.totals.grandTotal}}</p>
+        <div class="checkout_form__input_wrapper">
+            <label for="email">Email</label>
+            <input type="text" placeholder="elon@spacex.com" name="email" id="email">
+        </div>
+        <div class="checkout_form__inline_inputs_wrappper">
+            <div class="checkout_form__input_wrapper">
+                <label for="country">Country</label>
+                <select name="country" id="country" form="checkoutForm">
+                <option value="US">United States</option>
+                <option value="US">United Kingdom</option>
+                <option value="US">Poland</option>
+                <option value="US">Germany</option>
+                <option value="US">Sweden</option>
+                <option value="US">France</option>
+            </select>
+            </div>
+            <div class="checkout_form__input_wrapper">
+                <label for="postal">Postal Code</label>
+                <input type="number" placeholder="10001" id="postal" name="postal">
+            </div>
+        </div>
+        <div class="checkout_form__input_wrapper">
+            <label for="phone">Phone Number</label>
+            <input type="number" placeholder="(212)692-93-92" name="phone" id="phone">
+        </div>
+        <div class="checkout_form__title">
+            <div class="checkout_form__title_number"><span>2</span></div>
+            <span class="checkout_form__title_text">Payment details</span>
+        </div>
+        <div class="checkout_form__input_wrapper">
+            <label for="card">Credit Card Number</label>
+            <input type="number" placeholder="0000-0000-0000-0000" id="card" name="card">
+        </div>
+        <div class="checkout_form__inline_inputs_wrappper">
+            <div class="checkout_form__input_wrappper">
+                <label for="code">Security code</label>
+                <input type="text" placeholder="***" name="code" id="code">
+            </div>
+            <div class="checkout_form__input_wrapper">
+                <label for="expiration">Expiration date</label>
+                <input type="text" placeholder="MM/YY" name="expiration" id="expiration">
+            </div>
+        </div>
+        <button class="checkout_form__submit_button" type="submit"> COMPLETE PURCHASE </button>
+    </form>
+    <div class="cart">
+        <div class="cart__container">
+            <h3 class="cart__title">Your order</h3>
+            @each(item in state.cart.items)
+            <div class="cart__item_container">
+                <p class="cart__item_name">{{item.name}}</p>
+                <p class="cart__item_price">$ {{item.price}}</p>
+            </div>
+            @end
+            <div class="cart__product_summary">
+                <p>Total purchases</p>
+                <p>$ {{state.cart.totals.subTotal}}</p>
+            </div>
+            <div class="cart__product_tax">
+                <p>Estimated tax</p>
+                <p>$ {{state.cart.totals.tax}}</p>
+            </div>
+            <div class="cart__total">
+                <p class="cart__total_text">Total</p>
+                <p class="cart__total_price">$ {{state.cart.totals.grandTotal}}</p>
+            </div>
         </div>
     </div>
 </div>
