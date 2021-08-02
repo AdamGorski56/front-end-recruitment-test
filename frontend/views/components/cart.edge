@@ -1,0 +1,25 @@
+<div class="cart">
+    <div class="cart__container">
+        <h3 class="cart__title">Your order</h3>
+        @each(item in state.cart)
+        <div class="cart__item_container">
+            <p class="cart__item_name">{{item.name}}</p>
+            <p class="cart__item_price">{{item.price}}</p>
+        </div>
+        @end
+        <p class="cart__product_summary">
+            <p></p>
+            <p></p>
+        </p>
+        <div class="cart__product_tax">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="cart__total">
+            <p></p>
+        </div>
+    </div>
+</div>
+@section('scripts')
+<script>console.log(state)</script>
+@end
