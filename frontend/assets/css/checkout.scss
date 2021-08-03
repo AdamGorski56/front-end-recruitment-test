@@ -63,6 +63,31 @@ $black: 900;
   font-weight: $medium;
   margin-left: 5px;
 }
+.checkout_form__title_icon {
+  margin-top: 0.1rem;
+  margin-left: 1rem;
+  height: 0.9rem;
+  width: 0.9rem;
+}
+#creditCard {
+  background-image: url(../../public/images/visa.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+#CVV {
+  background-image: url(../../public/images/rounded-question-mark.png);
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+  background-position: 95%;
+}
+#cart_icon {
+  position: relative;
+  top: 3px;
+  height: 1rem;
+  width: 1rem;
+  background-color: rgb(78, 212, 25);
+}
 .checkout_form__inline_inputs_wrappper {
   @include flex-between;
   div {
@@ -96,6 +121,7 @@ $black: 900;
   display: block;
 }
 .checkout_form__submit_button {
+  z-index: 1;
   background-color: rgb(78, 212, 25);
   color: white;
   font-weight: $black;
@@ -103,6 +129,18 @@ $black: 900;
   @include border-rounded-shadow-bottom;
   height: 60px;
   margin-top: 3rem;
+  cursor: pointer;
+}
+
+#hidden_invalid_feedback {
+  display: none;
+}
+.is_invalid {
+  display: block !important;
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  padding-top: 6px;
 }
 
 // ------------------ Cart Section -----------------

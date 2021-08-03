@@ -14,56 +14,66 @@
             <div class="checkout_form__input_wrappper">
                 <label for="firstName">First name</label>
                 <input type="text" placeholder="Elon" name="firstName" id="firstName">
+                <div id="hidden_invalid_feedback" class="first_name">First name must be between 2 and 10 characters</div>
             </div>
             <div class="checkout_form__input_wrapper">
                 <label for="lastName">Last name</label>
                 <input type="text" placeholder="Musk" name="lastName" id="lastName">
+                <div id="hidden_invalid_feedback" class="last_name">Last name First name must be between 2 and 15 characters</div>
             </div>
         </div>
         <div class="checkout_form__input_wrapper">
             <label for="email">Email</label>
             <input type="text" placeholder="elon@spacex.com" name="email" id="email">
+            <div id="hidden_invalid_feedback" class="email">Please enter valid email</div>
         </div>
         <div class="checkout_form__inline_inputs_wrappper">
             <div class="checkout_form__input_wrapper">
                 <label for="country">Country</label>
                 <select name="country" id="country" form="checkoutForm">
                 <option value="US">United States</option>
-                <option value="US">United Kingdom</option>
-                <option value="US">Poland</option>
-                <option value="US">Germany</option>
-                <option value="US">Sweden</option>
-                <option value="US">France</option>
+                <option value="UK">United Kingdom</option>
+                <option value="PL">Poland</option>
+                <option value="GER">Germany</option>
+                <option value="SWE">Sweden</option>
+                <option value="FR">France</option>
             </select>
             </div>
             <div class="checkout_form__input_wrapper">
-                <label for="postal">Postal Code</label>
-                <input type="text" placeholder="10001" id="postal" name="postal">
+                <label for="postalCode">Postal Code</label>
+                <input type="text" placeholder="10001" id="postalCode" name="postalCode">
+                <div id="hidden_invalid_feedback" class="postalCode">Postal should contain five digits e.g "10001"</div>
             </div>
         </div>
+
         <div class="checkout_form__input_wrapper">
             <label for="phone">Phone Number</label>
             <input type="text" placeholder="(212)692-93-92" name="phone" id="phone">
+            <div id="hidden_invalid_feedback" class="phone">Postal should contain ten digits e.g "2126929392"</div>
         </div>
         <div class="checkout_form__title">
             <div class="checkout_form__title_number"><span>2</span></div>
             <span class="checkout_form__title_text">Payment details</span>
+            <img class="checkout_form__title_icon" src="./images/lock.png" alt="lock">
         </div>
         <div class="checkout_form__input_wrapper">
-            <label for="card">Credit Card Number</label>
-            <input type="text" placeholder="0000-0000-0000-0000" id="card" name="card">
+            <label for="creditCard">Credit Card Number</label>
+            <input type="text" placeholder="0000-0000-0000-0000" id="creditCard" name="creditCard">
+            <div id="hidden_invalid_feedback" class="creditCard">Card number should contain sixteen digits e.g "0000000000000000"</div>
         </div>
         <div class="checkout_form__inline_inputs_wrappper">
             <div class="checkout_form__input_wrappper">
-                <label for="code">Security code</label>
-                <input type="text" placeholder="***" name="code" id="code">
+                <label for="CVV">Security code</label>
+                <input type="text" placeholder="***" name="CVV" id="CVV">
+                <div id="hidden_invalid_feedback" class="CVV">CVV number should contain three digits e.g "321"</div>
             </div>
             <div class="checkout_form__input_wrapper">
-                <label for="expiration">Expiration date</label>
-                <input type="text" placeholder="MM/YY" name="expiration" id="expiration">
+                <label for="expDate">Expiration date</label>
+                <input type="text" placeholder="MM/YY" name="expDate" id="expDate">
+                <div id="hidden_invalid_feedback" class="expDate">Expiration date format is e.g "12/01"</div>
             </div>
         </div>
-        <button class="checkout_form__submit_button" type="submit"> COMPLETE PURCHASE </button>
+        <button class="checkout_form__submit_button" type="submit"><img src="./images/cart.png" alt="cart" id="cart_icon"> COMPLETE PURCHASE </button>
     </form>
     <div class="cart">
         <div class="cart__container">

@@ -36,12 +36,13 @@ main {
   margin: auto;
   height: 100%;
   padding: 0 30px;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 main main {
-  height: auto;
+  height: fit-content;
+  margin-top: 0;
 }
 
 .title {
