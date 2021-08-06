@@ -1,3 +1,4 @@
 import "../css/app.scss";
-import "./checkoutFormValidation";
-import "./bacon";
+
+import "./checkoutFormValidation.js";
+import "./bacon.js";

@@ -47,6 +47,13 @@ Route.get("/checkout", async ({ view }) => {
   return view.render("checkoutForm", state);
 });
 
+Route.get("/order/success", async ({ view }) => {
+  return view.render("success");
+});
+Route.get("/order/error", async ({ view }) => {
+  return view.render("error");
+});
+
 Route.post("/order", async ({ request, response }) => {
   const orderSchema = schema.create({
     firstName: schema.string(),
@@ -64,10 +71,9 @@ Route.post("/order", async ({ request, response }) => {
 
   try {
     await request.validate({ schema: orderSchema });
-    response.send({
-      message: "Order successfully placed.",
-    });
+    return response.redirect("order/success");
+    ({});
   } catch (error) {
-    response.badRequest(error.messages);
+    return response.redirect("order/error");
   }
 });

@@ -1,6 +1,6 @@
 // -------------  Variables -----------------
 
-// Input Handlers
+// Input references
 
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
@@ -11,7 +11,7 @@ const creditCard = document.getElementById("creditCard");
 const CVV = document.getElementById("CVV");
 const expDate = document.getElementById("expDate");
 
-// invalid input message containers
+// invalid input message references
 
 const firstNameInvalidMessage = document.querySelector(".first_name");
 const lastNameInvalidMessage = document.querySelector(".last_name");
@@ -33,10 +33,9 @@ creditCard.addEventListener("blur", creditCardValidation);
 CVV.addEventListener("blur", CVVValidation);
 expDate.addEventListener("blur", expDateValidation);
 
-// ---------------- functions -----------------------
+// ---------------- validation functions -----------------------
 
 function firstNameValidation() {
-  console.log(":das");
   const regex = /^[a-zA-z]{2,10}$/;
   if (!regex.test(firstName.value)) {
     firstNameInvalidMessage.classList.add("is_invalid");
